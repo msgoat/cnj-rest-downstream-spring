@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 
+## [5.2.0] - 2023-08-24
+### Changed
+- upgraded cnj-common-security-oidc-spring to 2.2.0
+- upgraded cnj-common-observability-spring to 1.1.0
+
 ## [5.1.0] - 2023-08-22
 ### Changed
 - added explicit dependency to CloudTrain Maven repository to POM to simplify local builds
