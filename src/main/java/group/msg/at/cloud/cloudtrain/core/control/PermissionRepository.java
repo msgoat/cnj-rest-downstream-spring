@@ -1,11 +1,12 @@
 package group.msg.at.cloud.cloudtrain.core.control;
 
 import group.msg.at.cloud.cloudtrain.core.entity.Permission;
-import org.springframework.stereotype.Service;
-
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.constraints.NotNull;
-import java.util.*;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Simplest possible {@code Repository} implementation based on a Map.
@@ -17,17 +18,17 @@ public class PermissionRepository {
 
     @PostConstruct
     public void onPostConstruct() {
-        permissions.add( new Permission("TASK_CREATE", "*", "*"));
-        permissions.add( new Permission("TASK_READ", "*", "*"));
-        permissions.add( new Permission("TASK_UPDATE", "*", "*"));
-        permissions.add( new Permission("TASK_DELETE", "*", "*"));
+        permissions.add(new Permission("TASK_CREATE", "*", "*"));
+        permissions.add(new Permission("TASK_READ", "*", "*"));
+        permissions.add(new Permission("TASK_UPDATE", "*", "*"));
+        permissions.add(new Permission("TASK_DELETE", "*", "*"));
     }
 
     public List<Permission> getPermissionsByUserAndProject(@NotNull String userName, @NotNull String projectName) {
         List<Permission> result = new ArrayList<>();
         for (Permission current : permissions) {
             if ((current.getUserName().equals(userName) || "*".equals(current.getUserName()))
-                &&
+                    &&
                     (current.getResourceQualifier().equals(projectName) || "*".equals(current.getResourceQualifier()))) {
                 result.add(current);
             }

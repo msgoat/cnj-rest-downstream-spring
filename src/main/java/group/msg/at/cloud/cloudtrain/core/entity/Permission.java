@@ -1,6 +1,7 @@
 package group.msg.at.cloud.cloudtrain.core.entity;
 
 import jakarta.validation.constraints.NotNull;
+
 import java.util.Objects;
 
 /**

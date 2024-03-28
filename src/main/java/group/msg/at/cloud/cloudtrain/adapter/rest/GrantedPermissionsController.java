@@ -3,15 +3,13 @@ package group.msg.at.cloud.cloudtrain.adapter.rest;
 import group.msg.at.cloud.cloudtrain.core.boundary.GrantedPermissionManager;
 import group.msg.at.cloud.cloudtrain.core.entity.GrantedPermission;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.net.URI;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "api/v1/grantedPermissions")
